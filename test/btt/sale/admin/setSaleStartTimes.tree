@@ -1,0 +1,10 @@
+FixedSaleSetSaleTimes
+├── when caller of setSaleTimes is not owner
+│   └── it reverts with {OwnableUnauthorizedAccount()}
+├── when saleStartTime is greater than saleEndTime
+│   └── it reverts with {InvalidTimeRange()}
+├── when saleStartTime is less than block.timestamp
+│   └── it reverts with {InvalidTimeRange()}
+└── when caller of setSaleTimes is owner
+    ├── it sets the sale start and end times
+    └── it emits a {SaleTimesUpdated} event

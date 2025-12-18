@@ -1,0 +1,12 @@
+DripProviderQueue
+├── when the caller is not the provider admin
+│   └── it should revert
+└── given the caller is the provider admin
+    ├── when the provider queue is empty
+    │   └── it should revert
+    ├── can drip multiple keys
+    │   └── it should emit {ProviderQueueDripped} event for each key
+    │   └── it should drip the provider queue for each key
+    └── when the provider queue is not empty
+        ├── it should emit {ProviderQueueDripped} event
+        └── it should drip the provider queue

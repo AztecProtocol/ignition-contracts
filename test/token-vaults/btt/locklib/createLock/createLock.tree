@@ -1,0 +1,12 @@
+CreateLockTest
+├── when lockDuration EQ ZERO
+│   └── it reverts
+└── when lockDuration GT ZERO
+    ├── when lockDuration LT cliffDuration
+    │   └── it reverts
+    └── when lockDuration GE cliffDuration
+        ├── it returns lock with startTime, cliff, endTime, allocation:
+        ├── it returns lock.startTime EQ startTime
+        ├── it returns lock.cliff EQ startTime + cliffDuration
+        ├── it returns lock.endTime EQ startTime + lockDuration
+        └── it returns lock.allocation EQ allocation

@@ -1,0 +1,7 @@
+AcceptProviderAdmin
+├── When the caller is not the pending provider admin
+│   └── It should revert
+└── When the caller is the pending provider admin
+    ├── It should update the provider admin
+    ├── It should delete the pending provider admin
+    └── It should emit {ProviderAdminUpdated} event

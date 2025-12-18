@@ -1,0 +1,6 @@
+SetGenesisSequencerSale
+├── when caller of setGenesisSequencerSale is not owner
+│   └── it reverts
+└── when caller of setGenesisSequencerSale is owner
+    ├── it sets the genesis sequencer sale
+    └── it emits a {GenesisSequencerSaleSet} event

@@ -1,0 +1,8 @@
+SetExecuteAllowedAtTest
+├── when caller NEQ owner
+│   └── it reverts
+└── when caller EQ owner
+    ├── when newExecuteAllowedAt GE currentExecuteAllowedAt
+    │   └── it reverts
+    └── when newExecuteAllowedAt LT currentExecuteAllowedAt
+        └── it updates the executeAllowedAt

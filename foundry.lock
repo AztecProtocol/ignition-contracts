@@ -1,0 +1,38 @@
+{
+  "lib/circuits": {
+    "rev": "3dceb985b1b4b28d07c4c27147df0e945b482f3e"
+  },
+  "lib/forge-std": {
+    "rev": "77041d2ce690e692d6e03cc812b57d1ddaa4d505"
+  },
+  "lib/l1-contracts": {
+    "tag": {
+      "name": "v3.0.0-nightly.20251026",
+      "rev": "df7e4abca72e8b5ee5a473503187e5cd4806beb7"
+    }
+  },
+  "lib/liquidity-launcher": {
+    "rev": "fd5be9b7a918ca3d925d985dff9bcde82b3b8a9d"
+  },
+  "lib/openzeppelin-contracts": {
+    "rev": "e4f70216d759d8e6a64144a9e1f7bbeed78e7079"
+  },
+  "lib/predicate-contracts": {
+    "rev": "07e43693a69301c8e986dc51ca59dc6c19e7b5f3"
+  },
+  "lib/splits-contracts-monorepo": {
+    "rev": "c03ddbe3b62dff6b357368b0200d5827ff704f21"
+  },
+  "lib/teegeeee": {
+    "rev": "6b414a0893faee2ab09bcb9c4faff7142b09e184"
+  },
+  "lib/uniswap-token-launcher": {
+    "rev": "258f3c65e5b92a84606164625a0e75bc78512537"
+  },
+  "lib/uniswap-twap-auction-internal-clone": {
+    "rev": "b122f5db6967155c9e9a116e89190b4d117c6c70"
+  },
+  "lib/zkpassport-packages": {
+    "rev": "1c321d6358f9e4b0193751fbc70f2543b786e5a4"
+  }
+}

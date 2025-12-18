@@ -1,0 +1,8 @@
+UpdateProviderAdmin
+├── When the caller is not the provider admin
+│   └── It should revert
+└── When the caller is the provider admin
+    ├── When the new admin is not the zero address
+    │   └── It should emit {ProviderAdminUpdated} event
+    └── When the new admin is the zero address
+        └── It should revert

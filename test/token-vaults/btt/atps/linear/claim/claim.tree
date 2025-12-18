@@ -1,0 +1,15 @@
+ClaimTest
+├── when caller is not beneficiary
+│   └── it reverts
+└── when caller is beneficiary
+    ├── when claimable amount is zero
+    │   └── it reverts
+    └── when claimable amount is greater than zero
+        ├── when token transfer fails
+        │   └── it reverts and does not update claimed
+        └── when token transfer succeeds
+            ├── it updates claimed with claimable amount
+            ├── it transfers tokens to beneficiary
+            └── when checking subsequent claims
+                ├── it returns zero immediately after claim
+                └── it accumulates new claimable amount after time passes 

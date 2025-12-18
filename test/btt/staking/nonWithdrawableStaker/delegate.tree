@@ -1,0 +1,11 @@
+Delegate
+├── When the caller is not the operator
+│   └── It reverts
+└── Given the caller is the operator
+    ├── When they delegate to the atp
+    │   ├── It succeeds
+    │   └── It allows the user to delegate again
+    ├── When the user has not deposited
+    │   └── It reverts
+    └── When the rollup version does not exist
+        └── It reverts

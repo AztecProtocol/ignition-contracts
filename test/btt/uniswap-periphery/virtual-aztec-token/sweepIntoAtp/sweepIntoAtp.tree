@@ -1,0 +1,7 @@
+AztecVirtualTokenMint
+├── when the sender has no balance
+│   └── it reverts atp creation
+├── when the sender has balance
+│   └── it creates a staking atp
+└── when the sender has balance GT Staking amount balance
+    └── it creates a normal atp

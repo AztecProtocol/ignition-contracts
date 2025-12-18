@@ -1,0 +1,6 @@
+AcclerateLock
+├── when caller NEQ Owner
+│   └── it reverts with OnlyOwner
+└── when caller EQ Owner
+    ├── it emits LockAccelerated
+    └── it sets lockAccelerated

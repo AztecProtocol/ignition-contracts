@@ -1,0 +1,5 @@
+ZKPassportPortNullifiersTest
+├── when caller NEQ is not owner
+│   └── it reverts
+└── when caller EQ owner
+    └──  it adds nullifiers to nullifier hashes mapping

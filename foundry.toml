@@ -1,0 +1,51 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+
+evm_version = "prague"
+optimizer = true
+
+ffi = true
+
+remappings = [
+  "src/=src/",
+  "test/=test/",
+  "@aztec/=lib/l1-contracts/src/",
+  "@aztec-test/=lib/l1-contracts/test",
+  "@openzeppelin/=lib/openzeppelin-contracts/",
+  "@oz/=lib/openzeppelin-contracts/contracts/",
+  "forge-std/=lib/forge-std/src/",
+  "@atp/=src/token-vaults",
+  "@atp-mock/=test/token-vaults/mocks",
+  "@zkpassport/=lib/circuits/src/solidity/src/",
+  "@splits/=lib/splits-contracts-monorepo/packages/splits-v2/src",
+  "@predicate/=lib/predicate-contracts/src",
+  "@teegeeee/=src/token-vaults",
+  "@twap-auction/=lib/liquidity-launcher/lib/continuous-clearing-auction/src",
+  "@twap-auction-test/=lib/liquidity-launcher/lib/continuous-clearing-auction/test",
+  "@launcher/=lib/liquidity-launcher/src",
+  "@v4c/=lib/liquidity-launcher/lib/v4-core/src/",
+  "@v4p/=lib/liquidity-launcher/lib/v4-periphery/src/"
+]
+
+# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+
+fs_permissions = [
+  { access = "read", path = "./test/btt/soulbound/providers/zkpassport/fixtures/valid_proof.hex" },
+  { access = "read", path = "./test/btt/soulbound/providers/zkpassport/fixtures/valid_committed_inputs.hex" },
+  { access = "read", path = "./test/btt/soulbound/providers/zkpassport/fixtures/valid_public_inputs.json" },
+  { access = "read", path = "./test/btt/soulbound/providers/zkpassport/fixtures/valid_extra_disclose_proof.hex" },
+  { access = "read", path = "./test/btt/soulbound/providers/zkpassport/fixtures/valid_extra_disclose_committed_inputs.hex" },
+  { access = "read", path = "./test/btt/soulbound/providers/zkpassport/fixtures/valid_extra_disclose_public_inputs.json" },
+  { access = "read", path = "./merkle-tree/outputs/genesis_sequencer_root.txt" },
+  { access = "read", path = "./merkle-tree/outputs/contributor_root.txt" },
+  { access = "read", path = "./merkle-tree/test-utils/test-outputs/genesis_sequencer_root.txt" },
+  { access = "read", path = "./merkle-tree/test-utils/test-outputs/contributor_root.txt" },
+  { access = "read", path = "./script/deploy/utilities/data/keys.json" },
+  { access = "read", path = "./shell-scripts/attester_inputs.json" },
+  { access = "read-write", path = "../deployments/" },
+  { access = "read-write", path = "./deployments/" },
+  { access = "read-write", path = "./**/deployments/" },
+  { access = "read-write", path = "/home/runner/work/ignition-monorepo/ignition-monorepo/deployments" },
+]

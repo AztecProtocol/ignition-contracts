@@ -13,8 +13,8 @@
 [submodule "lib/splits-contracts-monorepo"]
 	path = lib/splits-contracts-monorepo
 	url = https://github.com/0xSplits/splits-contracts-monorepo
-[submodule "libe/openzeppelin-contracts"]
-	path = libe/openzeppelin-contracts
+[submodule "lib/openzeppelin-contracts"]
+	path = lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
 [submodule "lib/forge-std"]
 	path = lib/forge-std

@@ -1,0 +1,24 @@
+StakingTest
+├── when the provider does not exist
+│   └── it should revert
+└── when the provider exists
+    ├── when the provider has no keys registered
+    │   └── it should revert
+    ├── when the provider has keys registered
+    │   ├── it should be able to stake
+    │   ├── it should deploy a split contract
+    │   ├── it should emit {StakedWithProvider} event
+    │   ├── it should be split correctly
+    │   └── the recipient of the split contract should be the user and the providerReward recipient
+    ├── when the rollup address provider is incorrect
+    │   └── it should revert
+    ├── when the withdrawal address is the zero address
+    │   └── it should revert
+    ├── when the rollup version does not exist
+    │   └── it should revert
+    ├── when the user rewards recipient is the zero address
+    │   └── it should revert
+    ├── when the provider take rate has changed
+    │   └── it should revert
+    └── when the deposit call reverts
+        └── the funds should return to the withdrawal address

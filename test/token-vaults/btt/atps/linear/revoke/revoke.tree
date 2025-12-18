@@ -1,0 +1,15 @@
+RevokeTest
+├── given non revokable lock
+│   └── it reverts {NotRevokable()}
+└── given revokable lock
+    ├── when caller NEQ revoker
+    │   └── it reverts {NotRevoker()}
+    └── when caller EQ revoker
+        ├── given already revoked
+        │   └── it reverts {AlreadyRevoked()}
+        └── given not revoked
+            ├── given lock has ended
+            │   └── it reverts {LockHasEnded()}
+            └── given lock has not ended
+                ├── it sets isRevoked to true
+                └── it sets debt to the difference between allocation and the value at the current time

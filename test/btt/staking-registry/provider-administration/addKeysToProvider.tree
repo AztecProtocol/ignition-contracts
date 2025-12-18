@@ -1,0 +1,6 @@
+AddKeysToProvider
+├── When the caller is not the provider admin
+│   └── It should revert
+└── When the caller is the provider admin
+    ├── It should emit {AttestersAddedToProvider} event
+    └── It should be able to add keys to the provider

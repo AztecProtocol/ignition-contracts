@@ -1,0 +1,10 @@
+RegisterProvider
+├── When the provider admin is the zero address
+│   └── It should revert
+├── When the take rate is greater than 100
+│   └── It should revert
+├── When the rewards recipient is the zero address
+│   └── It should revert
+└── When the take rate is less than or equal to 100
+    └── It should register the provider
+    

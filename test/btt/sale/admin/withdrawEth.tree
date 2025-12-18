@@ -1,0 +1,7 @@
+WithdrawEth
+├── when caller of withdrawEth is not owner
+│   └── it reverts
+└── when caller of withdrawEth is owner
+    ├── when the recipient cannot receive ETH
+    │   └── it reverts with {ETHTransferFailed()}
+    └── it emits a {ETHWithdrawn} event

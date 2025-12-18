@@ -1,0 +1,8 @@
+InitiateWithdrawFromGoverance
+├── when the sender NEQ Operator
+│   └── it reverts
+└── given that sender is EQ Operator
+    ├── when withdrawing more amount than balance
+    │   └── it reverts
+    └── given withdrawing less than the amount in Governance
+        └── it initiates a withdrawal to the ATP

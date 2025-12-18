@@ -1,0 +1,15 @@
+ATPBeneficiary
+├── when the set beneficiary is the Zero Address
+│   └── it should revert with ZeroAddress
+├── when the set beneficiary is not the zero address
+│   ├── it should emit AtpBeneficiarySet event
+│   └── it should set the atp beneficiary
+├── when the set beneficiary with signature is the Zero Address
+│   └── it should revert with ZeroAddress
+├── when the set beneficiary with signature has an invalid signature
+│   └── it should revert with InvalidEIP712SetBeneficiarySignature
+└── given the set beneficiary with signature is valid
+    ├── when the set deadline has been exceeded
+    │   └── it should revert with SignatureDeadlineExpired
+    └── given the deadline has not been passed
+        └── it should set the atp beneficiary

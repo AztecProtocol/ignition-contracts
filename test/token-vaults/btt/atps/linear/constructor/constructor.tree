@@ -1,0 +1,9 @@
+ConstructorTest
+├── when token EQ address zero
+│   └── it revert
+└── when token NEQ address zero
+    ├── when payload registry EQ address zero
+    │   └── it revert
+    └── when payload registry NEQ address zero
+        ├── it updates the TOKEN
+        └── it updates the PAYLOAD_REGISTRY

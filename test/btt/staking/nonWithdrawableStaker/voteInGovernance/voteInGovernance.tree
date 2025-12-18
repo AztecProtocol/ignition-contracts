@@ -1,0 +1,5 @@
+VoteInGovernance
+├── when the caller NEQ Operator
+│   └── it reverts
+└── given the caller EQ Operator
+    └── it votes on a proposal

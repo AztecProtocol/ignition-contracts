@@ -1,0 +1,11 @@
+InitiateWithdraw
+├── when the caller is not the operator
+│   └── it reverts
+└── given that the caller is the operator
+    ├── when the version of the rollup does not exist
+    │   └── it reverts
+    └── given that the version of the rollup exists
+        ├── when the staker is not the withdrawer
+        │   └── it reverts
+        └── when the staker is the withdrawer
+            └── it succeeds

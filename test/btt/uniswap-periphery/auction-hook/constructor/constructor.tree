@@ -1,0 +1,10 @@
+AztecAuctionHookConstructor
+├── when soulbound EQ address zero
+│   └── it reverts
+├── when contributor period block end LT block.number
+│    └── it reverts
+└── when all parameters are valid
+    ├── it should set soulbound
+    └──  should set contributor period block end
+
+

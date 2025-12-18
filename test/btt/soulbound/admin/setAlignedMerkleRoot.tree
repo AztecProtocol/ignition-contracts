@@ -1,0 +1,6 @@
+SetGenesisSequencerMerkleRoot
+├── when caller of setGenesisSequencerMerkleRoot is not owner
+│   └── it reverts
+└── when caller of setGenesisSequencerMerkleRoot is owner
+    ├── it sets the genesis sequencer merkle root
+    └── it emits a {GenesisSequencerMerkleRootUpdated} event

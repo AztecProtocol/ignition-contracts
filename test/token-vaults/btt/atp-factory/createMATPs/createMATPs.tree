@@ -1,0 +1,10 @@
+CreateMATPsTest
+├── when caller is not a minter
+│   └── it reverts
+└── when caller is a minter
+    ├── when lengths does not match
+    │   └── it reverts
+    └── when lengths match
+        ├── it creates and initializes multiple MATPs
+        ├── it transfers _allocation of tokens to the MATPs
+        └── it returns the MATPs

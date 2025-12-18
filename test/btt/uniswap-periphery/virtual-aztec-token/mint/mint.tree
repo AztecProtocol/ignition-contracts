@@ -1,0 +1,10 @@
+AztecVirtualTokenMint
+├── when the sender is not the owner
+│   └── it reverts with OwnableUnauthorizedAccount
+└── given that the sender is the owner
+    ├── when the minter has not approved the underlying
+    │   └── it reverts with ERC20InsufficientAllowance
+    ├── when the minting is not backed 1 to 1 by the underlying
+    │   └── it reverts with UnderlyingTokensNotBacked
+    └── when the minting is backed
+        └── it mints the tokens

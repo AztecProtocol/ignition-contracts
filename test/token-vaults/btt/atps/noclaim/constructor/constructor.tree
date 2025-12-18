@@ -1,0 +1,9 @@
+ConstructorTest
+├── when registry EQ address zero
+│   └── it revert
+└── when registry NEQ address zero
+    ├── when token EQ address zero
+    │   └── it revert
+    └── when token NEQ address zero
+        ├── it updates the TOKEN
+        └── it updates the REGISTRY

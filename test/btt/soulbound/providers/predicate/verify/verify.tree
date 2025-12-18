@@ -1,0 +1,8 @@
+PredicateVerify
+├── when caller is not the consumer
+│   └── it reverts with {InvalidConsumer}
+└── when caller is the consumer
+    ├── when predicate succeeds
+    │   └── it returns true
+    └──  when predicate fails
+        └── it reverts with {AuthorizationFailed}

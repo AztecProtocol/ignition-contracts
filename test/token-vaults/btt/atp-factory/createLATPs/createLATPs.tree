@@ -1,0 +1,10 @@
+CreateLATPsTest
+├── when caller is not a minter
+│   └── it reverts
+└── when caller is a minter
+    ├── when lengths does not match
+    │   └── it reverts
+    └── when lengths match
+        ├── it creates and initializes multiple ATPs
+        ├── it transfers _allocation of tokens to the ATPs
+        └── it returns the ATPs

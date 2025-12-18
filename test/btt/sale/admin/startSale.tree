@@ -1,0 +1,6 @@
+FixedSaleStartSale
+├── when caller of startSale is not owner
+│   └── it reverts
+└── when caller of startSale is owner
+    ├── it starts the sale
+    └── it emits a {SaleStarted} event

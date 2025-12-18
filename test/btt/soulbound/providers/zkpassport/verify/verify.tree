@@ -1,0 +1,26 @@
+ZKPassportVerify
+├── when caller is not the consumer
+│   └── it reverts with {InvalidConsumer}
+└── when caller is the consumer
+    ├── given a valid zkpassport proof
+    │   ├── when the proof is already used
+    │   │   └── it reverts with {SybilDetected}
+    │   ├── when the proof is not used
+    │   │   ├── when the bound address is the user
+    │   │   │   └── when the chainId matches the on-chain chainId
+    │   │   │       └── it returns true
+    │   │   │   └── when the chainId doesn't match the on-chain chainId
+    │   │   │       └── it reverts with {ZKPassportProvider__InvalidBoundChainId}
+    │   │   └── when the bound address is not the user
+    │   │       └── it reverts with {ZKPassportProvider__InvalidBoundAddress}
+    ├── given an valid zkpassport proof with extra disclose data
+    │   └── it reverts with {ZKPassportProvider__ExtraDiscloseDataNonZero}
+    └── given an invalid zkpassport proof
+        ├── when devMode is true
+        │   └── it reverts with {InvalidProof}
+        ├── when domain doesn't match
+        │   └── it reverts with {ZKPassportProvider__InvalidDomain}
+        ├── when scope doesn't match
+        │   └── it reverts with {ZKPassportProvider__InvalidScope}
+        └── when verifier checks the proof and returns false
+            └── it reverts with {ZKPassportProvider__InvalidProof}

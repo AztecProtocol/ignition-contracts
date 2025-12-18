@@ -1,0 +1,6 @@
+setIdentityProviders
+├── when caller of setIdentityProviders is not owner
+│   └── it reverts
+└── when caller of setIdentityProviders is owner
+    ├── it sets a identity provider
+    └── it emits a {IdentityProviderSet} event

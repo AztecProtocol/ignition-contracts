@@ -1,0 +1,6 @@
+PredicateSetPolicy
+├── when caller of setPolicy is not owner
+│   └── it reverts
+└── when caller of setPolicy is owner
+    ├── it sets the policy
+    └── it emits a {PolicySet} event

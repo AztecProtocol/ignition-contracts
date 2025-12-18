@@ -1,0 +1,6 @@
+SetAuction
+├── when caller of setAuction is not owner
+│   └── it reverts
+└── when caller of setAuction is owner
+    ├── it sets the auction
+    └── it emits a {AuctionSet} event

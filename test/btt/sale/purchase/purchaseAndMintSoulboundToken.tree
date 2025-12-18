@@ -1,0 +1,33 @@
+PurchaseAndMintSoulboundToken
+├── When the sale is not active
+│   └── It reverts with {SaleNotActive()}
+├── When the Sale has not started
+│   └── It reverts with {SaleNotActive()}
+├── When the Sale has ended
+│   └── It reverts with {SaleHasEnded()}
+├── When the sale token balance is not enough to fulfil the user's order
+│   └── It reverts with {InsufficientBalance()}
+├── When the purchase count is zero
+│   └── It reverts with {InvalidPurchaseCount()}
+├── When the address has already purchased
+│   └── It reverts with {AlreadyPurchased()}
+├── When the user has not provided enough eth
+│   └── It reverts with {IncorrectETH()}
+├── When the user has provided excess eth
+│   └── It reverts with {IncorrectETH()}
+├── When there are not enough tokens to fulfil the user's order
+│   └── It reverts with {InsufficientTokensRemaining()}
+├── When the identity provider fails
+│   └── It reverts
+├── When the address screening fails
+│   └── It reverts
+├── When the user has already has an nft
+│   └── It reverts
+├── When the whitelist provider is not registered
+│   └── It reverts
+├── When the gridTileId has already been minted
+│   └── It reverts
+├── When the atpBeneficiary screening fails
+│   └── It reverts
+└── When all requirements are met
+    └── It mints an ATP with the correct amount of tokens

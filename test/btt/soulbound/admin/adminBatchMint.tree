@@ -1,0 +1,13 @@
+AdminBatchMintTest
+├── When the caller is not the Admin
+│   └── It should revert
+├── When the address has already minted
+│   └── It should revert
+├── When the tokenId is out of range
+│   └── It should revert
+├── When the tokenIds and addresses are of different lengths
+│   └── It should revert
+├── When the gridTileIds and addresses are of different lengths
+│   └── It should revert
+└── When the tokenId is in range and the caller is the admin
+    └── It should mint the tokens 

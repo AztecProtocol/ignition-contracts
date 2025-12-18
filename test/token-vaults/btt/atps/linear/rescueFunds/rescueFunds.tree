@@ -1,0 +1,8 @@
+RescueFundsTest
+├── when caller is not beneficiary
+│   └── it reverts
+└── when caller is beneficiary
+    ├── when asset is unlocking token
+    │   └── it reverts
+    └── when asset is not unlocking token
+        └── it transfers entire balance to recipient 

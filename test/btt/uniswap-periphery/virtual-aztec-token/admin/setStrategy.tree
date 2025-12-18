@@ -1,0 +1,8 @@
+SetStrategy
+├── when the caller is not the admin
+│   └── it should revert with Ownable
+└── given the caller is the admin
+    ├── when the address is the zero address
+    │   └── it reverts
+    └── when all parameters is not the zero address
+        └── it sets the Strategy address

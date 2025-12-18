@@ -1,0 +1,23 @@
+GenesisSequencerSaleConstructor
+├── when _atpFactory is zero address
+│   └── it should revert with ZeroAddress
+├── when _saleToken is zero address
+│   └── it should revert with ZeroAddress
+├── when _soulboundToken is zero address
+│   └── it should revert with ZeroAddress
+├── when _pricePerLot is zero
+│   └── it should revert with InvalidPrice
+├── when _saleStartTime is greater than or equal to _saleEndTime
+│   └── it should revert with InvalidTimeRange
+├── when _saleStartTime is less than block.timestamp
+│   └── it should revert with InvalidTimeRange
+├── when _screeningProvider is zero
+│   └── it should revert with ZeroAddress
+└── when all parameters are valid
+    ├── it should set atpFactory
+    ├── it should set soulboundToken
+    ├── it should set pricePerLot
+    ├── it should set SALE_START_TIME
+    ├── it should set SALE_END_TIME
+    ├── it should set owner to msg.sender
+    └── it should initialize saleActive as false

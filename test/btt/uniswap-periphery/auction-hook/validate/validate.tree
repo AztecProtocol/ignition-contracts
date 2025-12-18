@@ -1,0 +1,40 @@
+AztecAuctionHookValidate
+├── given the contributor block period has not ended
+│   ├── when the sender is a contributor
+│   │   └── it should pass
+│   ├── when the sender is a genesis sequencer
+│   │   └── it should pass
+│   ├── when the sender is not a contributor
+│   │   └── it should reveert
+│   └── when the sender does not have a soulbound token
+│       └── it should revert
+├── given the contributor block period has ended
+│   ├── when the sender is a contributor
+│   │   └── it should pass
+│   ├── when the sender is a genesis sequencer
+│   │   └── it should pass
+│   ├── when the sender is not a contributor
+│   │   └── it should pass
+│   └── when the sender does not have a soulbound token
+│       └── it should revert
+├── given that the sender is not the auction
+│   └── it should revert
+└── given that the sender is the auction
+    ├── when the address screening is not set 
+    │   └── it reverts with AddressScreeningProviderNotSet
+    ├── given the address screening is set
+    │   ├── when the address screening fails
+    │   │    └── it reverts with OwnerNotScreenedSuccessfully
+    │   └── when the address screening succeeds
+    │       └── it should allow the bid
+    ├── given that the bid is exact in 
+    │   ├── when the bid is under the max purchase limit
+    │   │    └── it should allow the bid
+    │   └── when the bid is over the max purchase limit
+    │       └── it should not allow the bid / it reverts
+    └── given multiple bids are made
+        └── given the bid is exact in
+            ├── when the bid is under the max purchase limit
+            │   └── it should allow the bid
+            └── when the bid is over the max purchase limit
+                └── it should not allow the bid / it reverts

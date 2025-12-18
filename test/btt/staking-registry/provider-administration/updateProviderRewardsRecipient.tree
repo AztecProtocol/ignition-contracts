@@ -1,0 +1,8 @@
+UpdateProviderRewardsRecipient
+├── When the caller is not the provider admin
+│   └── It should revert
+└── When the caller is the provider admin
+    ├── When the rewards recipient is not zero address
+    │   └── It should emit {ProviderRewardsRecipientUpdated} event
+    └── When the rewards recipient is zero address
+        └── It should revert

@@ -1,0 +1,7 @@
+Stake
+├── when the caller is not the operator
+│   └── it reverts
+├── when the rollup version does not exist
+│   └── it reverts
+└── given the caller is the operator
+    └──  it should let the user stake

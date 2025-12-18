@@ -1,0 +1,5 @@
+TransferFrom
+├── when _to NEQ strategy address
+│   └── it reverts with {VirtualAztecToken__NotImplemented}
+└── when _to EQ strategy address
+    └── it succeeds

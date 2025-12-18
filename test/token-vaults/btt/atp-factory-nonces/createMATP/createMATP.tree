@@ -1,0 +1,12 @@
+CreateMATPTest
+├── when caller is not a minter
+│   └── it reverts
+├── when caller is a minter
+│   ├── it creates and initializes a MATP
+│   ├── it transfers _allocation of tokens to the MATP
+│   └── it returns the MATP
+└── when an atp with repeated owner and amount is created
+    ├── it uses a nonce from the nonce lib
+    ├── it creates and initializes an ATP
+    ├── it transfers _allocation of tokens to the ATP
+    └── it returns the ATP

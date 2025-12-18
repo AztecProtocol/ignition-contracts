@@ -1,0 +1,14 @@
+VirtualAztecTokenConstructor
+├── when the atp factory is the zero address
+│   └── it should revert with ZeroAddress
+├── when the underlying token address is the zero address
+│   └── it should revert with zero address
+├── when the foundation address is the zero address
+│   └── it should revert with zero address
+└── when all parameters are valid
+    ├── it should set the auction address
+    ├── it should set the strategy address
+    ├── it should set the atp factory
+    ├── it should set the underlying token address
+    ├── it should set the foundation address
+    └── it should set the owner to msg.sender

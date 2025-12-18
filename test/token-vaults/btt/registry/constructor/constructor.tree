@@ -1,0 +1,12 @@
+ConstructorTest
+├── when owner EQ address zero
+│   └── it reverts
+└── when owner NEQ address zero
+    ├── when unlockLockDuration EQ 0
+    │   └── it reverts
+    └── when unlockLockDuration GT 0
+        ├── when unlockCliffDuration LT unlockLockDuration
+        │   └── it reverts
+        └── when unlockLockDuration GT unlockCliffDuration
+            ├── it updates the unlockCliffDuration
+            └── it updates the unlockLockDuration

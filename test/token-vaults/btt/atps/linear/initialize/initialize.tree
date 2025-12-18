@@ -1,0 +1,25 @@
+InitializeTest
+├── given executor NEQ address zero
+│   └── it reverts
+└── given executor EQ address zero
+    ├── given beneficiary EQ address zero
+    │   └── it reverts
+    └── given beneficiary NEQ address zero
+        ├── given allocation EQ 0
+        │   └── it reverts
+        └── given allocation GT 0
+            ├── when revoke beneficiary EQ address zero
+            │   ├── when revokable lock params NEQ empty
+            │   │   └── it reverts
+            │   └── when revokable lock params is empty
+            │       ├── it updates the allocation
+            │       ├── it updates the beneficiary
+            │       └── it updates the executor
+            └── when revoke beneficiary NEQ address zero
+                ├── when revokable lock params is invalid
+                │   └── it reverts
+                └── when revokable lock params is valid
+                    ├── it updates the allocation
+                    ├── it updates the beneficiary
+                    ├── it updates the executor
+                    └── it updates the store

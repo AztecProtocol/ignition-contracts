@@ -1,0 +1,10 @@
+markNextTest
+├── when proposalId GE proposalCount
+│   └── it reverts {NoProposalToMark}
+└── when proposalId LT proposalCount
+    ├── when proposalState is alive
+    │   └── it reverts with {ProposalIsAlive}
+    └── when proposalState is dead
+        ├── it increases markedProposalsCount
+        ├── it set blockOfLastMarkNext to block number
+        └── it emits {ProposalMarked}

@@ -1,0 +1,6 @@
+AttestationSetAttestationAuthority
+├── when caller of setAttestationAuthority is not owner
+│   └── it reverts
+└── when caller of setAttestationAuthority is owner
+    ├── it sets the attestation authority
+    └── it emits a {AttestationAuthoritySet} event

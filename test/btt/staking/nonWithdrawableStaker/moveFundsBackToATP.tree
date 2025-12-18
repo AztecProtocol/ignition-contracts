@@ -1,0 +1,8 @@
+MoveFundsBackToATP
+├── When the caller is not the operator
+│   └── It reverts
+└── Given the caller is the operator
+    ├── When there are funds in the staker
+    │   └── It succeeds
+    └── When the deposit fails and returns funds to the withdrawer
+        └── It succeeds

@@ -1,0 +1,5 @@
+ClaimTest
+├── when caller NEQ beneficiary
+│   └── it reverts NotBeneficiary
+└── when caller EQ beneficiary
+    └── it reverts NoClaimable

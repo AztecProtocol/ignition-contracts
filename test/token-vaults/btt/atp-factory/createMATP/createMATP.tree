@@ -1,0 +1,7 @@
+CreateMATPTest
+├── when caller is not a minter
+│   └── it reverts
+└── when caller is a minter
+    ├── it creates and initializes a MATP
+    ├── it transfers _allocation of tokens to the MATP
+    └── it returns the MATP

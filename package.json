@@ -1,0 +1,38 @@
+{
+  "name": "ignition-contracts",
+  "version": "1.0.0",
+  "description": "Contracts for Aztec's Ignition",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "format": "forge fmt",
+    "lint": "solhint --config ./.solhint.json \"src/**/*.sol\"",
+    "lint:fix": "solhint --config ./.solhint.json --fix --noPrompt \"src/**/*.sol\"; forge fmt",
+    "process-merkle-tree": "npx ts-node merkle-tree/process_merkle_tree.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AztecProtocol/ignition-contracts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AztecProtocol/ignition-contracts/issues"
+  },
+  "homepage": "https://github.com/AztecProtocol/ignition-contracts#readme",
+  "dependencies": {
+    "@openzeppelin/merkle-tree": "^1.0.8",
+    "ox": "^0.8.4"
+  },
+  "devDependencies": {
+    "solhint": "5.1.0",
+    "@types/node": "^24.0.12",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

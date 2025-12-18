@@ -1,0 +1,21 @@
+VirtualAztecTokenTransfer
+├── given the virtual aztec token is backed
+│   ├── when the auction address is the sender
+│   │   ├── it should decrease the total supply
+│   │   ├── it should decrease the balance of the sender
+│   │   └── it should increase the pendingAtpBalance of the _to
+│   ├── when the strategy address is the sender and recipient is the auction address
+│   │   └── it should move the virtual tokens, not the underlying tokens
+│   │   ├── it should decrease the total supply
+│   │   ├── it should decrease the balance of the sender
+│   │   └── it should transfer the underlying tokens to the recipient
+│   └── when the strategy address is the sender and the recipient is not the auction address
+│       ├── it should decrease the total supply
+│       ├── it should decrease the balance of the sender
+│       └── it should transfer the underlying tokens to the recipient
+│   └── when the auction is the sender and the recipient has an atp recipient set
+│       ├── it should decrease the total supply
+│       ├── it should decrease the balance of the sender
+│       └── it should transfer an ATP to the listed recipient
+└── when the sender is neither the auction address nor the strategy address
+    └── it should be transferrable normally

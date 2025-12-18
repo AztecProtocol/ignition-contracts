@@ -1,0 +1,8 @@
+AssertValidTest
+├── when lock duration EQ zero
+│   └── it reverts
+└── when lock duration GT zero
+    ├── when lock duration LT cliff duration
+    │   └── it reverts
+    └── when lock duration GE cliff duration
+        └── it passes

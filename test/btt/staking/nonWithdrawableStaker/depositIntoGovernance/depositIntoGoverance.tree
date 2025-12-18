@@ -1,0 +1,10 @@
+DepositIntoGoveranceTest
+├── when the caller is not the operator
+│   └── it reverts
+└── given the caller is the operator
+    ├── when amount is GT the balance of the atp
+    │   └── it reverts
+    └── given the amount is LTE the balance of the atp
+        ├── it deposits into governance
+        ├── it assigns power to the staker contract
+        └── it has the correct power

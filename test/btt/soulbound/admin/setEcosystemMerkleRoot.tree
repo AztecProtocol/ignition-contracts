@@ -1,0 +1,6 @@
+SetContributorMerkleRoot
+├── when caller of setContributorMerkleRoot is not owner
+│   └── it reverts
+└── when caller of setContributorMerkleRoot is owner
+    ├── it sets the contributor merkle root
+    └── it emits a {ContributorMerkleRootUpdated} event

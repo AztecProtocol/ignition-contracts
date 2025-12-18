@@ -1,0 +1,13 @@
+AttestationVerify
+├── when caller is not the consumer
+│   └── it reverts with {InvalidConsumer}
+└── when caller is the consumer
+    ├── when signature is invalid
+    │   ├── when signature has wrong length
+    │   │   └── it reverts with {InvalidAttestation}
+    │   └── when signer is not attestation authority
+    │       └── it reverts with {InvalidAttestation}
+    ├── when signature is for different user
+    │   └── it reverts with {InvalidAttestation}
+    └── when signature is valid
+        └── it returns true

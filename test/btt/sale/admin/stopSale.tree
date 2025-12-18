@@ -1,0 +1,6 @@
+FixedSaleStopSale
+├── when caller of stopSale is not owner
+│   └── it reverts
+└── when caller of stopSale is owner
+    ├── it stops the sale
+    └── it emits a {SaleStopped} event

@@ -1,0 +1,6 @@
+PredicateSetPredicateManager
+├── when caller of setPredicateManager is not owner
+│   └── it reverts
+└── when caller of setPredicateManager is owner
+    ├── it sets the predicate manager
+    └── it emits a {PredicateManagerSet} event

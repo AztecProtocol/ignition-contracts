@@ -1,0 +1,19 @@
+StakeWithProvider
+├── when the caller is not the operator
+│   └── it reverts
+├── when the rollup version does not exist
+│   └── it reverts
+├── when the providerId does not exist
+│   └── it reverts
+└── given that a provider is registered
+    ├── when the provider has no attesters registered
+    │   └── it reverts
+    ├── when the user rewards recipient is the zero address
+    │   └── it reverts
+    ├── when the provider take rate has changed
+    │   └── it reverts
+    └── given that an attester is registered
+        ├── it deposits into the rollup with the attester
+        ├── it deploys a splits contract with the expected stake rate
+        └── it sets the staker as the withdrawer
+

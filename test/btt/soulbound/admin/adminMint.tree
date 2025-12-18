@@ -1,0 +1,9 @@
+AdminMintTest
+├── When the caller is not the Admin
+│   └── It should revert
+├── When the tokenId is out of range
+│   └── It should revert
+├── When the address has already minted
+│   └── It should revert
+└── When the tokenId is in range and the caller is the admin
+    └── It should mint the token

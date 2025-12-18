@@ -1,0 +1,29 @@
+MintSoulboundToken
+├── given trees are initialized
+│   └── given the beneficiary is the same as the caller
+│   │   ├── when gridTileId is already taken
+│   │   │   └── it should revert with GridTokenAlreadyAssigned
+│   │   ├── when eligibility provider accepts
+│   │   │   └── it should mint soulbound token
+│   │   └── when eligibility provider rejects
+│   │       └── it should revert with InvalidAuth
+│   └── given the beneficiary is not the same as the caller
+│   │   ├── when gridTileId is already taken
+│   │   │   └── it should revert with GridTokenAlreadyAssigned
+│       ├── when eligibility provider accepts
+│       │   └── it should mint soulbound token
+│       ├── when eligibility provider rejects
+│       │   └── it should revert with InvalidAuth
+│       ├── when screening provider accepts
+│       │   └── it should mint soulbound token
+│       ├── when screening provider rejects
+│       │   └── it should revert with InvalidAuth
+│       └── when gridTileId is zero
+│           └── it should revert with GridTileIdCannotBeZero
+└── when trees are not initialized
+    ├── when genesis sequencer tree is not initialized
+    │   └── it should revert with NoMerkleRootSet
+    ├── when contributor tree is not initialized
+    │   └── it should revert with NoMerkleRootSet
+    └── when both trees are not initialized
+        └── it should mint general soulbound token

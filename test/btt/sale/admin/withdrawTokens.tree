@@ -1,0 +1,8 @@
+WithdrawTokens
+├── when caller of withdrawTokens is not owner
+│   └── it reverts
+├── when token transfer reverts
+│   └── it reverts
+└── when caller of withdrawTokens is owner
+    ├── it withdraws tokens from the contract
+    └── it emits a {TokensWithdrawn} event

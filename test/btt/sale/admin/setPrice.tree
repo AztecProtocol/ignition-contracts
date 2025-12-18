@@ -1,0 +1,8 @@
+FixedSaleSetPrice
+├── when caller of setPrice is not owner
+│   └── it reverts with {OwnableUnauthorizedAccount()}
+├── when price is zero
+│   └── it reverts with {InvalidPrice()}
+└── when caller of setPrice is owner
+    ├── it sets the price
+    └── it emits a {PriceUpdated} event

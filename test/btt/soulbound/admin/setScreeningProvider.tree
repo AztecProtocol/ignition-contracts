@@ -1,0 +1,6 @@
+SetAddressScreeningProvider
+├── when caller of setAddressScreeningProvider is not owner
+│   └── it reverts
+└── when caller of setAddressScreeningProvider is owner
+    ├── it sets the address screening provider
+    └── it emits a {AddressScreeningProviderSet} event

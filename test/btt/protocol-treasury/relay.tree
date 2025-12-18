@@ -1,0 +1,18 @@
+relayTest
+├── when caller NEQ governance
+│   └── it reverts {GateIsClosed}
+└── when caller EQ governance
+    ├── when timestamp LT gatedUntil
+    │   └── it reverts {GateIsClosed}
+    └── when timestamp GE gatedUntil
+        ├── when blocknumber LE blockOfLastMarkNext
+        │   └── it reverts {GateIsClosed}
+        └── when blocknumber GT blockOfLastMarkNext
+            ├── given oldest unmarked creation LE activation time
+            │   └── it reverts {GateIsClosed}
+            └── given oldest unmarked creation GT activation time
+                ├── when value GT balance
+                │   └── it reverts
+                └── when value LE balance
+                    ├── it transfers value to target
+                    └── it executes the caller

@@ -1,0 +1,5 @@
+SoulboundInteraction
+├── When the user does not have a soulbound token
+│   └── It reverts with {NoSoulboundToken()}
+└── When the caller is not the token sale contract
+    └── It reverts with {CallerIsNotTokenSale()}

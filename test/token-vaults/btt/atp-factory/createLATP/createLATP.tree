@@ -1,0 +1,7 @@
+CreateATPTest
+├── when caller is not a minter
+│   └── it reverts
+└── when caller is a minter
+    ├── it creates and initializes an ATP
+    ├── it transfers _allocation of tokens to the ATP
+    └── it returns the ATP

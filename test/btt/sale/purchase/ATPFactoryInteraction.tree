@@ -1,0 +1,3 @@
+ATPFactoryInteraction
+└── When the ATP factory does not have enough token balance
+    └── It reverts

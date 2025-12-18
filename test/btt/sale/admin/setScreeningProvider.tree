@@ -1,0 +1,8 @@
+SetScreeningProvider
+├── when caller of setScreeningProvider is not owner
+│   └── it reverts
+├── when screening provider is the zero address
+│   └── it reverts
+└── when caller of setScreeningProvider is owner
+    ├── it sets a screening provider
+    └── it emits a {ScreeningProviderSet} event

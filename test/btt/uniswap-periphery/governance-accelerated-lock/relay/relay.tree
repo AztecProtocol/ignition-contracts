@@ -1,0 +1,14 @@
+Relay
+├── when caller NEQ owner
+│   └── it reverts
+└── given caller EQ owner
+    ├── given lock is accelerated
+    │   ├── when 90 days has not passed
+    │   │   └── it should revert with LockTimeNotMet
+    │   └── When 90 days has passed
+    │       └── it should not revert
+    └── given lock is not accelerated
+        ├── when 365 days has not passed
+        │   └── it should revert with LockTimeNotMet
+        └── when 365 days has passed
+            └── it should not revert

@@ -1,0 +1,15 @@
+CreateMATPsTest
+├── when caller is not a minter
+│   └── it reverts
+└── when caller is a minter
+    ├── when lengths does not match
+    │   └── it reverts
+    └── when lengths match
+    │   ├── it creates and initializes multiple MATPs
+    │   ├── it transfers _allocation of tokens to the MATPs
+    │   └── it returns the MATPs
+    └── when amounts and parameters are the same
+        ├── it uses nonces from the nonce lib
+        ├── it creates and initializes multiple ATPs
+        ├── it transfers _allocation of tokens to the ATPs
+        └── it returns the ATPs

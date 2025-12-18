@@ -1,0 +1,7 @@
+QueueTest
+├── When not initialized and queue is empty
+│   ├── it reverts when calling dequeue
+│   └── it has length of 0
+└── When adding a key store to the queue
+    ├── it updates the length correctly
+    └── it can be dequeued

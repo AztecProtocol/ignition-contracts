@@ -1,0 +1,6 @@
+PredicateSetConsumer
+├── when caller of setConsumer is not owner
+│   └── it reverts
+└── when caller of setConsumer is owner
+    ├── it sets the consumer
+    └── it emits a {ConsumerSet} event

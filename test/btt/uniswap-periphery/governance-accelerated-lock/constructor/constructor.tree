@@ -1,0 +1,7 @@
+Constructor
+├── when governance address EQ zero
+│   └── it reverts with GovernanceAddressCannotBeZero
+└── when governance address NEQ zero
+    ├── it sets start time
+    ├── it sets governance address to owner
+    └── it sets lockAccelerated to false

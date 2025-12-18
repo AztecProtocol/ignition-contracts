@@ -1,0 +1,9 @@
+broadcast/*
+node_modules/*
+out/*
+cache/** 
+**/target/**
+**/outputs/**
+
+.contracts/dev/** 
+deployments/**

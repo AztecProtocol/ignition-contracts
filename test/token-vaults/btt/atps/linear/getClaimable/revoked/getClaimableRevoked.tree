@@ -1,0 +1,8 @@
+GetClaimableRevokedTest
+├── when the locks have ended
+│   └── it returns the balance
+└── when the locks have not ended
+    ├── given balance LT unlocked schedule
+    │   └── it returns the balance
+    └── given balance GE unlocked schedule
+        └── it returns the unlocked value

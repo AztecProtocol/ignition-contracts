@@ -1,0 +1,6 @@
+ZKPassportSetZKPassportVerifier
+├── when caller of setZKPassportVerifier is not owner
+│   └── it reverts
+└── when caller of setZKPassportVerifier is owner
+    ├── it sets the zk passport verifier
+    └── it emits a {ZKPassportVerifierSet} event

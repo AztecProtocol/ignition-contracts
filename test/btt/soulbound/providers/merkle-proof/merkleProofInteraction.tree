@@ -1,0 +1,9 @@
+MerkleProofInteraction
+├── When the user does not have a valid merkle proof
+│   └── It reverts with {MerkleProofInvalid()}
+├── User cannot use valid merkle proof on wrong group
+│   └── It reverts with {MerkleProofInvalid()}
+├── User cannot use invalid merkle proof on any group
+│   └── It reverts with {MerkleProofInvalid()}
+└── User can use valid merkle proof on correct group
+    └── It does not revert

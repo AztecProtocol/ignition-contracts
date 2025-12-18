@@ -1,0 +1,11 @@
+UpdateProviderAdmin
+├── When the caller is not the provider admin
+│   └── It should revert
+└── Given the caller is the provider admin
+    ├── When the take rate is less than Constants.BIPS
+    │   ├── It should emit {ProviderTakeRateUpdated} event
+    │   └── It should update the provider take rate
+    ├── When the take rate is the same as the current take rate
+    │   └── It should revert
+    └── When the take rate is greater than Constants.BIPS
+        └── It should revert

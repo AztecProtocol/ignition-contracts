@@ -1,0 +1,10 @@
+UnlockedAtTest
+├── when timestamp is at or after endTime
+│   └── it returns the full allocation
+├── when timestamp is before cliff
+│   └── it returns zero
+└── when timestamp is from cliff up to endTime
+    ├── when timestamp equals cliff
+    │   └── it returns the amount unlocked at cliff
+    └── when timestamp is between cliff and endTime
+        └── it returns the linear unlocked amount

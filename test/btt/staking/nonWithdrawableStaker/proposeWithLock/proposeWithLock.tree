@@ -1,0 +1,6 @@
+ProposeWithLock
+├── when the caller NEQ Operator
+│   └── it reverts
+└── given the caller EQ Operator
+    ├── it sets the withdrawer to be the ATP
+    └── it passes the proposal along
