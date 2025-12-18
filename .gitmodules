@@ -1,0 +1,24 @@
+[submodule "lib/liquidity-launcher"]
+	path = lib/liquidity-launcher
+	url = https://github.com/Uniswap/liquidity-launcher
+[submodule "lib/l1-contracts"]
+	path = lib/l1-contracts
+	url = https://github.com/AztecProtocol/l1-contracts
+[submodule "lib/zkpassport-packages"]
+	path = lib/zkpassport-packages
+	url = https://github.com/zkpassport/zkpassport-packages
+[submodule "lib/predicate-contracts"]
+	path = lib/predicate-contracts
+	url = https://github.com/PredicateLabs/predicate-contracts
+[submodule "lib/splits-contracts-monorepo"]
+	path = lib/splits-contracts-monorepo
+	url = https://github.com/0xSplits/splits-contracts-monorepo
+[submodule "libe/openzeppelin-contracts"]
+	path = libe/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "lib/forge-std"]
+	path = lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "lib/circuits"]
+	path = lib/circuits
+	url = https://github.com/zkpassport/circuits
