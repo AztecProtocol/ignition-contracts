@@ -49,7 +49,7 @@
 
 # Overview
 
-The Aztec Network conducted a token sale in late 2025 where it distributed approximately 14.95% of the total supply to participants of the Aztec Sale. Aztec utilized the [CCA](#https://github.com/Uniswap/continuous-clearing-auction)
+The Aztec Network conducted a token sale in late 2025 where it distributed approximately 14.95% of the total supply to participants of the Aztec Sale. Aztec utilized the [CCA](#https://github.com/Uniswap/continuous-clearing-auction) auction system; developed in collaboration with Uniswap.
 
 **Motivation for the Soulbound Token**
 User's who take part in the sale MUST be cleared to not be sanctioned individuals. We do that through the minting of a Ignition Particiapnt Soulbound Token.
