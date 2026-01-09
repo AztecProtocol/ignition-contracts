@@ -125,6 +125,7 @@ contract ATPNonWithdrawableStaker is IATPNonWithdrawableStaker, BaseStaker {
      */
     function delegate(uint256 _version, address _attester, address _delegatee)
         external
+        virtual
         override(IATPNonWithdrawableStaker)
         onlyOperator
     {
