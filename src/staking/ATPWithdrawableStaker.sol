@@ -46,7 +46,7 @@ contract ATPWithdrawableStaker is IATPWithdrawableStaker, ATPNonWithdrawableStak
      *
      * @dev This function can be called by anyone on the rollup, and is not necessarily required to be called via the staker
      */
-    function finalizeWithdraw(uint256 _version, address _attester) external override(IATPWithdrawableStaker) {
+    function finalizeWithdraw(uint256 _version, address _attester) external virtual override(IATPWithdrawableStaker) {
         address rollup = ROLLUP_REGISTRY.getRollup(_version);
         IStaking(rollup).finaliseWithdraw(_attester);
     }

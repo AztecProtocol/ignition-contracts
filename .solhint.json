@@ -1,0 +1,42 @@
+{
+    "extends": "solhint:recommended",
+    "rules": {
+        "one-contract-per-file": "off",
+        "no-inline-assembly": "off",
+        "import-path-check": "off",
+        "not-rely-on-time": "off",
+        "no-global-import": "error",
+        "interface-starts-with-i": "error",
+        "immutable-vars-naming": [
+            "error",
+            {
+                "immutablesAsConstants": true
+            }
+        ],
+        "compiler-version": [
+            "error",
+            ">=0.8.27"
+        ],
+        "func-visibility": [
+            "error",
+            {
+                "ignoreConstructors": true
+            }
+        ],
+        "no-unused-vars": "error",
+        "state-visibility": "error",
+        "var-name-mixedcase": "error",
+        "func-param-name-mixedcase": "error",
+        "ordering": "error",
+        "comprehensive-interface": "error",
+        "no-unused-import": "error",
+        "imports-order": "error",
+        "check-send-result": "error",
+        "duplicated-imports": "warn",
+        "gas-custom-errors": "warn",
+        "named-parameters-mapping": "warn",
+        "gas-struct-packing": "warn",
+        "no-empty-blocks": "warn",
+        "func-name-mixedcase": "off"
+    }
+}
