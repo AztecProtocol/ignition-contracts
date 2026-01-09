@@ -13,7 +13,7 @@ contract FinalizeWithdrawTest is Base {
     NCATP public ATP = NCATP(0xE1ea32a54F4FB323dBbE760384617CAa7aa0f331);
     address public ATTESTER = 0x0Ce7B6316E7dA7d02f6f98001296bb7E77aaDAE1;
 
-    function test_finaliseWithdraw() public {
+    function test_finalizeWithdraw() public {
         IATPWithdrawableAndClaimableStaker staker = IATPWithdrawableAndClaimableStaker(address(ATP.getStaker()));
 
         address operator = ATP.getOperator();
