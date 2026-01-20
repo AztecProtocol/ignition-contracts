@@ -1,4 +1,4 @@
-InitiateWithdrawFromGoverance
+InitiateWithdrawFromGovernance
 ├── when the sender NEQ Operator
 │   └── it reverts
 └── given that sender is EQ Operator

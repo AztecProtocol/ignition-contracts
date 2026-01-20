@@ -155,7 +155,7 @@ contract ATPNonWithdrawableStaker is IATPNonWithdrawableStaker, BaseStaker {
     /**
      * @notice Vote in governance
      * @notice Voting power is held by this staker contract
-     *         Users must first deposit into Goverance via depositIntoGovernance first
+     *         Users must first deposit into Governance via depositIntoGovernance first
      *
      * @dev Governance contract is derived from the rollup registry
      *
@@ -175,7 +175,7 @@ contract ATPNonWithdrawableStaker is IATPNonWithdrawableStaker, BaseStaker {
     /**
      * @notice Initiate a withdrawal from governance
      * @notice This function will initiate a withdrawal from governance
-     *         Users must first deposit into Goverance via depositIntoGovernance first
+     *         Users must first deposit into Governance via depositIntoGovernance first
      *
      * @dev Governance contract is derived from the rollup registry
      *
@@ -196,7 +196,7 @@ contract ATPNonWithdrawableStaker is IATPNonWithdrawableStaker, BaseStaker {
 
     /**
      * @notice Propose With Lock
-     * @notice This function will make a proposal into Goverance but funds will be locked for an
+     * @notice This function will make a proposal into Governance but funds will be locked for an
      *         extended period of time - see the Gov implementation for more details
      *
      * @param _proposal The proposal to propose
