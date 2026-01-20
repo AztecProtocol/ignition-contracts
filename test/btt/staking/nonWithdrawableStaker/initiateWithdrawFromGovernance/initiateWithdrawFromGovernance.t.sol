@@ -8,7 +8,7 @@ import {StakerTestBase} from "test/btt/staking/StakerTestBase.sol";
 import {IATPNonWithdrawableStaker} from "src/staking/interfaces/IATPNonWithdrawableStaker.sol";
 import {BaseStaker} from "@atp/staker/BaseStaker.sol";
 
-contract InitiateWithdrawFromGoverance is StakerTestBase {
+contract InitiateWithdrawFromGovernance is StakerTestBase {
     function setUp() public override {
         super.setUp();
 

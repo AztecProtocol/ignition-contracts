@@ -10,7 +10,7 @@ import {BaseStaker} from "@atp/staker/BaseStaker.sol";
 
 import {console} from "forge-std/console.sol";
 
-contract DepositIntoGoveranceTest is StakerTestBase {
+contract DepositIntoGovernanceTest is StakerTestBase {
     function setUp() public override {
         super.setUp();
 

@@ -39,4 +39,28 @@ contract DelegationTest is Base {
         // Ensure that it increased! It is now working, wuhu
         assertGt(GSE.getVotingPower(beneficiary), beneficiaryPowerBefore);
     }
+
+    function test_delegateExitNoOp() public {
+        // Test that will upgrade and delegate to self, then exit and do another delegation (effective no-op).
+        test_delegateFollowingToSelf();
+
+        IATPWithdrawableAndClaimableStaker staker = IATPWithdrawableAndClaimableStaker(address(ATP.getStaker()));
+
+        address operator = ATP.getOperator();
+        address beneficiary = ATP.getBeneficiary();
+
+        assertGt(GSE.getVotingPower(beneficiary), 0);
+
+        vm.prank(operator);
+        staker.initiateWithdraw(0, ATTESTER);
+
+        assertEq(GSE.getVotingPower(beneficiary), 0);
+
+        // Delegating
+        vm.prank(operator);
+        staker.delegate(0, ATTESTER, beneficiary);
+
+        // Ensure that no power was delegated since no balance after withdrawal initiated
+        assertEq(GSE.getVotingPower(beneficiary), 0);
+    }
 }

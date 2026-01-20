@@ -1,4 +1,4 @@
-DepositIntoGoveranceTest
+DepositIntoGovernanceTest
 ├── when the caller is not the operator
 │   └── it reverts
 └── given the caller is the operator
