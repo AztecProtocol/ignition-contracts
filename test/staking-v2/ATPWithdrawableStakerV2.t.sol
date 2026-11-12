@@ -31,6 +31,8 @@ interface IVersioned {
  *         Run with `forge test --match-path test/staking-v2/* --fork-url $RPC_URL`
  */
 contract ATPWithdrawableStakerV2Test is Test {
+    IATPRegistry public constant ATP_REGISTRY_A = IATPRegistry(0xD938bE4A2cB41105Bc2FbE707dca124A2e5d0c80);
+    IATPRegistry public constant ATP_REGISTRY_B = IATPRegistry(0x667d2641cb96734f386adA6A9afCF07B1815fB8b);
     address public constant ATP_REGISTRY_OWNER = 0x92Ba0FD39658105FaC4dF2B9BADE998B5816b350;
 
     IATP public constant MATP_A = IATP(0xfbD2b11C906a97f5b51682fE13e80b282A9ea50C);
@@ -60,8 +62,8 @@ contract ATPWithdrawableStakerV2Test is Test {
         implementation = deployer.deploy();
 
         vm.startPrank(ATP_REGISTRY_OWNER);
-        deployer.ATP_REGISTRY_A().registerStakerImplementation(address(implementation));
-        deployer.ATP_REGISTRY_B().registerStakerImplementation(address(implementation));
+        ATP_REGISTRY_A.registerStakerImplementation(address(implementation));
+        ATP_REGISTRY_B.registerStakerImplementation(address(implementation));
         vm.stopPrank();
 
         token = deployer.AZTEC_TOKEN();
@@ -69,11 +71,11 @@ contract ATPWithdrawableStakerV2Test is Test {
         rollup = IStaking(deployer.ROLLUP_REGISTRY().getCanonicalRollup());
         rollupVersion = IVersioned(address(rollup)).getVersion();
 
-        vm.warp(_max(deployer.ATP_REGISTRY_A().getExecuteAllowedAt(), deployer.ATP_REGISTRY_B().getExecuteAllowedAt()));
+        vm.warp(_max(ATP_REGISTRY_A.getExecuteAllowedAt(), ATP_REGISTRY_B.getExecuteAllowedAt()));
     }
 
     function test_registeredOnBothRegistries() public view {
-        IATPRegistry[2] memory registries = [deployer.ATP_REGISTRY_A(), deployer.ATP_REGISTRY_B()];
+        IATPRegistry[2] memory registries = [ATP_REGISTRY_A, ATP_REGISTRY_B];
         for (uint256 i = 0; i < registries.length; i++) {
             assertEq(StakerVersion.unwrap(registries[i].getNextStakerVersion()), 2);
             assertEq(registries[i].getStakerImplementation(STAKER_VERSION), address(implementation));
