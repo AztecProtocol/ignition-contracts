@@ -10,8 +10,8 @@ import {ATPWithdrawableStakerV2} from "src/staking/ATPWithdrawableStakerV2.sol";
 import {IRegistry} from "src/staking/rollup-system-interfaces/IRegistry.sol";
 
 /**
- * @notice Deploys `ATPWithdrawableStakerV2` and registers it with the employee and investor ATP registries,
- *         making staking available to the ATPs created by those factories.
+ * @notice Deploys `ATPWithdrawableStakerV2` and registers it with the ATP registries below,
+ *         making staking available to the ATPs that use them.
  *
  * Usage:
  *   forge script DeployATPWithdrawableStakerV2 --sig "deploy()" --rpc-url $RPC_URL --broadcast
@@ -23,8 +23,8 @@ contract DeployATPWithdrawableStakerV2 is Script {
     IRegistry public constant ROLLUP_REGISTRY = IRegistry(0x35b22e09Ee0390539439E24f06Da43D83f90e298);
     IStakingRegistry public constant STAKING_REGISTRY = IStakingRegistry(0x042dF8f42790d6943F41C25C2132400fd727f452);
 
-    IATPRegistry public constant EMPLOYEE_ATP_REGISTRY = IATPRegistry(0xD938bE4A2cB41105Bc2FbE707dca124A2e5d0c80);
-    IATPRegistry public constant INVESTOR_ATP_REGISTRY = IATPRegistry(0x667d2641cb96734f386adA6A9afCF07B1815fB8b);
+    IATPRegistry public constant ATP_REGISTRY_A = IATPRegistry(0xD938bE4A2cB41105Bc2FbE707dca124A2e5d0c80);
+    IATPRegistry public constant ATP_REGISTRY_B = IATPRegistry(0x667d2641cb96734f386adA6A9afCF07B1815fB8b);
 
     function deploy() public returns (ATPWithdrawableStakerV2 staker) {
         vm.startBroadcast();
@@ -39,17 +39,17 @@ contract DeployATPWithdrawableStakerV2 is Script {
      */
     function register(address _staker) public {
         vm.startBroadcast();
-        EMPLOYEE_ATP_REGISTRY.registerStakerImplementation(_staker);
-        INVESTOR_ATP_REGISTRY.registerStakerImplementation(_staker);
+        ATP_REGISTRY_A.registerStakerImplementation(_staker);
+        ATP_REGISTRY_B.registerStakerImplementation(_staker);
         vm.stopBroadcast();
 
-        _logLatest("Employee", EMPLOYEE_ATP_REGISTRY);
-        _logLatest("Investor", INVESTOR_ATP_REGISTRY);
+        _logLatest("Registry A", ATP_REGISTRY_A);
+        _logLatest("Registry B", ATP_REGISTRY_B);
     }
 
     function _logLatest(string memory _name, IATPRegistry _registry) internal view {
         StakerVersion version = StakerVersion.wrap(StakerVersion.unwrap(_registry.getNextStakerVersion()) - 1);
-        console.log(_name, "registry staker version:", StakerVersion.unwrap(version));
+        console.log(_name, "staker version:", StakerVersion.unwrap(version));
         console.log("  implementation:", _registry.getStakerImplementation(version));
     }
 }

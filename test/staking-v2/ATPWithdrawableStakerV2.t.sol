@@ -27,15 +27,15 @@ interface IVersioned {
 }
 
 /**
- * @notice Mainnet fork test for making staking available to employee and investor ATPs.
+ * @notice Mainnet fork test for registering ATPWithdrawableStakerV2 with existing ATP registries.
  *         Run with `forge test --match-path test/staking-v2/* --fork-url $RPC_URL`
  */
 contract ATPWithdrawableStakerV2Test is Test {
     address public constant ATP_REGISTRY_OWNER = 0x92Ba0FD39658105FaC4dF2B9BADE998B5816b350;
 
-    IATP public constant EMPLOYEE_MATP = IATP(0xfbD2b11C906a97f5b51682fE13e80b282A9ea50C);
-    IATP public constant EMPLOYEE_LATP = IATP(0x9ebDe774E213480E69c78760adD76604Ce156cE7);
-    IATP public constant INVESTOR_LATP = IATP(0x8F48578604Cf32cE95653e6D7DE2A5640b42eCf1);
+    IATP public constant MATP_A = IATP(0xfbD2b11C906a97f5b51682fE13e80b282A9ea50C);
+    IATP public constant LATP_A = IATP(0x9ebDe774E213480E69c78760adD76604Ce156cE7);
+    IATP public constant LATP_B = IATP(0x8F48578604Cf32cE95653e6D7DE2A5640b42eCf1);
 
     uint256 public constant PROVIDER_ID = 2;
 
@@ -60,8 +60,8 @@ contract ATPWithdrawableStakerV2Test is Test {
         implementation = deployer.deploy();
 
         vm.startPrank(ATP_REGISTRY_OWNER);
-        deployer.EMPLOYEE_ATP_REGISTRY().registerStakerImplementation(address(implementation));
-        deployer.INVESTOR_ATP_REGISTRY().registerStakerImplementation(address(implementation));
+        deployer.ATP_REGISTRY_A().registerStakerImplementation(address(implementation));
+        deployer.ATP_REGISTRY_B().registerStakerImplementation(address(implementation));
         vm.stopPrank();
 
         token = deployer.AZTEC_TOKEN();
@@ -69,42 +69,37 @@ contract ATPWithdrawableStakerV2Test is Test {
         rollup = IStaking(deployer.ROLLUP_REGISTRY().getCanonicalRollup());
         rollupVersion = IVersioned(address(rollup)).getVersion();
 
-        vm.warp(
-            _max(
-                deployer.EMPLOYEE_ATP_REGISTRY().getExecuteAllowedAt(),
-                deployer.INVESTOR_ATP_REGISTRY().getExecuteAllowedAt()
-            )
-        );
+        vm.warp(_max(deployer.ATP_REGISTRY_A().getExecuteAllowedAt(), deployer.ATP_REGISTRY_B().getExecuteAllowedAt()));
     }
 
     function test_registeredOnBothRegistries() public view {
-        IATPRegistry[2] memory registries = [deployer.EMPLOYEE_ATP_REGISTRY(), deployer.INVESTOR_ATP_REGISTRY()];
+        IATPRegistry[2] memory registries = [deployer.ATP_REGISTRY_A(), deployer.ATP_REGISTRY_B()];
         for (uint256 i = 0; i < registries.length; i++) {
             assertEq(StakerVersion.unwrap(registries[i].getNextStakerVersion()), 2);
             assertEq(registries[i].getStakerImplementation(STAKER_VERSION), address(implementation));
         }
     }
 
-    function test_employeeMATP_lifecycle() public {
-        _lifecycle(EMPLOYEE_MATP, true);
+    function test_matpA_lifecycle() public {
+        _lifecycle(MATP_A, true);
     }
 
-    function test_employeeLATP_lifecycle() public {
-        _lifecycle(EMPLOYEE_LATP, false);
+    function test_latpA_lifecycle() public {
+        _lifecycle(LATP_A, false);
     }
 
-    function test_investorLATP_lifecycle() public {
-        _lifecycle(INVESTOR_LATP, true);
+    function test_latpB_lifecycle() public {
+        _lifecycle(LATP_B, true);
     }
 
     function test_noBeneficiaryWithdrawal() public {
-        IATPWithdrawableAndClaimableStaker staker = _upgrade(EMPLOYEE_MATP);
+        IATPWithdrawableAndClaimableStaker staker = _upgrade(MATP_A);
 
         // Even with the full balance approved, there is no path to send tokens to the beneficiary
-        address beneficiary = EMPLOYEE_MATP.getBeneficiary();
-        uint256 balance = token.balanceOf(address(EMPLOYEE_MATP));
+        address beneficiary = MATP_A.getBeneficiary();
+        uint256 balance = token.balanceOf(address(MATP_A));
         vm.prank(beneficiary);
-        EMPLOYEE_MATP.approveStaker(balance);
+        MATP_A.approveStaker(balance);
 
         vm.prank(operator);
         vm.expectRevert();
