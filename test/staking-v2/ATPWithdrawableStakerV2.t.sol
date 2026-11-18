@@ -71,7 +71,7 @@ contract ATPWithdrawableStakerV2Test is Test {
         rollup = IStaking(deployer.ROLLUP_REGISTRY().getCanonicalRollup());
         rollupVersion = IVersioned(address(rollup)).getVersion();
 
-        vm.warp(_max(ATP_REGISTRY_A.getExecuteAllowedAt(), ATP_REGISTRY_B.getExecuteAllowedAt()));
+        vm.warp(_max(block.timestamp, _max(ATP_REGISTRY_A.getExecuteAllowedAt(), ATP_REGISTRY_B.getExecuteAllowedAt())));
     }
 
     function test_registeredOnBothRegistries() public view {
